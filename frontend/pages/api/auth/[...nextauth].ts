@@ -17,11 +17,30 @@ export const authOptions: AuthOptions = {
     }),
   ],
   callbacks: {
+    // async jwt({ token, user, account }) {
+    //   token.user ??= user;
+    //   token.accessToken ??= account?.access_token;
+    //   token.refreshToken ??= account?.refresh_token;
+    //   token.expiresAt ??= (account?.expires_at ?? 0) * 1000;
+    //   token.error = undefined;
+    //   // Return previous token if the access token has not expired yet
+    //   if (Date.now() < (token.expiresAt as number)) {
+    //     return token;
+    //   }
+    //
+    //   // Access token has expired, try to update it
+    //   console.log("Access token has expired!");
+    //   return token;
+    //   // return refreshAccessToken(token);
+    // },
+
     async session({ session, token }) {
+      console.log(session, token);
       session.user = {
         name: token?.name || "",
         email: token?.email || "",
         image: token?.picture || "",
+        accessToken: token?.accessToken || "",
       };
       return session;
     },

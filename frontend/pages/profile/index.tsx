@@ -24,8 +24,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   };
 };
 
-export default function Profile({ session }: { session: Session }) {
-  console.log(session.user);
+export default function Profile({ session }: { session: any }) {
+  const fetchHelloWorld = async () => {
+    const helloWorld = await fetch("http://localhost:8000/hello-world/", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${session.user.accessToken}`,
+      },
+    });
+    console.log(await helloWorld.json());
+  };
   return (
     <div>
       <h1>Profile</h1>
@@ -33,6 +41,7 @@ export default function Profile({ session }: { session: Session }) {
         Logged in as <code>{session.user?.name}</code>
       </h2>
       <button onClick={() => signOut()}>Sign out</button>
+      <button onClick={() => fetchHelloWorld()}>Ping API</button>
     </div>
   );
 }
