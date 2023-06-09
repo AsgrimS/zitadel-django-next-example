@@ -18,54 +18,24 @@ requests = "^2.31.0"
 pyjwt = "^2.7.0"
 cryptography = "^41.0.1"
 markdown = "^3.4.3"
+authlib = "^1.2.0"
 
 [tool.ruff]
-unfixable = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "I",
-  "N",
-  "Q",
-  "S",
-  "T",
-  "W",
-  "ANN",
-  "ARG",
-  "BLE",
-  "COM",
-  "DJ",
-  "DTZ",
-  "EM",
-  "ERA",
-  "EXE",
-  "FBT",
-  "ICN",
-  "INP",
-  "ISC",
-  "NPY",
-  "PD",
-  "PGH",
-  "PIE",
-  "PL",
-  "PT",
-  "PTH",
-  "PYI",
-  "RET",
-  "RSE",
-  "RUF",
-  "SIM",
-  "SLF",
-  "TCH",
-  "TID",
-  "TRY",
-  "UP",
-  "YTT",
+line-length = 100
+target-version = "py311"
+select = [
+  "E", # PEP8
+  "W", # PEP8
+  "N", # PEP8-Naming
+  "F", # Pyflakes
+  "I", # Isort
 ]
+unfixable = ["F401"]
+
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
 
 
 [tool.poetry.group.dev.dependencies]

@@ -4,12 +4,13 @@ from rest_framework.viewsets import ViewSet
 from api.authentication import ZitadelAuthentication
 
 
-class SampleResource(ViewSet):
+class SampleProtectedResource(ViewSet):
     authentication_classes = [ZitadelAuthentication]
 
-    def list(self, request):
-        print("---------------------")
-        print(request.headers.get("Authorization"))
-        print("---------------------")
-        # return Response(request.user.user_info)
-        return Response("Hello World!")
+    def list(self, _):
+        return Response("Hello from protected world!")
+
+
+class SamplePublicResource(ViewSet):
+    def list(self, _):
+        return Response("Hello from public world!")

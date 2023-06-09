@@ -17,10 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
-from api.views import SampleResource
+from api.views import SampleProtectedResource, SamplePublicResource
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
-    path("hello-world/", SampleResource.as_view({"get": "list"})),
+    path("hello-world-protected/", SampleProtectedResource.as_view({"get": "list"})),
+    path("hello-world-public/", SamplePublicResource.as_view({"get": "list"})),
 ]

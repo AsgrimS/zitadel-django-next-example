@@ -43,6 +43,20 @@ six = "*"
 test = ["astroid", "pytest"]
 
 [[package]]
+name = "authlib"
+version = "1.2.0"
+description = "The ultimate Python library in building OAuth and OpenID Connect servers and clients."
+optional = false
+python-versions = "*"
+files = [
+    {file = "Authlib-1.2.0-py2.py3-none-any.whl", hash = "sha256:4ddf4fd6cfa75c9a460b361d4bd9dac71ffda0be879dbe4292a02e92349ad55a"},
+    {file = "Authlib-1.2.0.tar.gz", hash = "sha256:4fa3e80883a5915ef9f5bc28630564bc4ed5b5af39812a3ff130ec76bd631e9d"},
+]
+
+[package.dependencies]
+cryptography = ">=3.2"
+
+[[package]]
 name = "backcall"
 version = "0.2.0"
 description = "Specifications for callback functions passed in to an API"
@@ -852,4 +866,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "1ae1f53cf732d6f2c5684df4b6aa88289042ccab077d47a787bee8bd7425ef6f"
+content-hash = "f67ee051baa14204a406de6e01cdf3f0a98bca780c38ad9ea4096d2f1f589471"
