@@ -17,8 +17,7 @@ async function refreshAccessToken(token: JWT): Promise<JWT> {
     );
 
     console.log("------------------------");
-    console.log("Token refreshed");
-    console.log(token);
+    console.log("Token refreshed", token);
     console.log("------------------------");
 
     return {
