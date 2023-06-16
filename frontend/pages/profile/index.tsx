@@ -86,7 +86,14 @@ export default function Profile({ session }: { session: any }) {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
+        alignItems: "center",
+      }}
+    >
       <h1>Profile</h1>
       <h2>
         Logged in as <code>{session.user?.name}</code>
@@ -96,17 +103,32 @@ export default function Profile({ session }: { session: any }) {
           display: "flex",
           flexDirection: "column",
           gap: "10px",
-          alignItems: "center",
         }}
       >
-        <button onClick={() => fetchHelloWorldPublic()}>Ping Public API</button>
-        <button onClick={() => fetchHelloWorldProtected()}>
+        <button
+          style={{ height: "30px", width: "300px" }}
+          onClick={() => fetchHelloWorldPublic()}
+        >
+          Ping Public API
+        </button>
+        <button
+          style={{ height: "30px", width: "300px" }}
+          onClick={() => fetchHelloWorldProtected()}
+        >
           Ping Protected API
         </button>
-        <button onClick={() => fetchHelloWorldProtectedLocal()}>
+        <button
+          style={{ height: "30px", width: "300px" }}
+          onClick={() => fetchHelloWorldProtectedLocal()}
+        >
           Ping Protected Local API
         </button>
-        <button onClick={() => signOut()}>Sign out</button>
+        <button
+          style={{ height: "30px", width: "300px" }}
+          onClick={() => signOut()}
+        >
+          Sign out
+        </button>
       </div>
     </div>
   );

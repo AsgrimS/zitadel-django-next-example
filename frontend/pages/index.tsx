@@ -16,11 +16,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        Auth Demo
+        <h1>Auth Demo</h1>
         <span>
-          <Link href="/profile">Profile</Link>
+          <button style={{ height: "30px", width: "300px" }}>
+            <Link href="/profile">See Profile</Link>
+          </button>
         </span>
-        <button onClick={() => signIn()}>Sign In</button>
+        <button
+          style={{ height: "30px", width: "300px" }}
+          onClick={() => signIn()}
+        >
+          Sign In
+        </button>
       </main>
     </>
   );
